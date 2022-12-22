@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
+      int row = grid.size(), col = grid[0].size();
+       while(k--) {
+           auto temp = grid;
+           for(int i=0 ; i<row ; i++){
+               for(int j=0 ; j<col-1 ; j++){
+                   temp [i][j+1]  = grid[i][j]  ;         
+                }
+           }
+           for(int i =0; i<row-1 ; i++){
+             temp[i + 1][0] = grid[i][col - 1];
+           }
+           
+           //shift the element at last row & col into first row & col
+           
+           temp[0][0] = grid[row-1][col-1];
+            grid = temp ;
+       }
+       return grid;
+        
+    }
+};
