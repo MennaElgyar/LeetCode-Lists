@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int countNegatives(vector<vector<int>>& grid) {
+        int count=0;
+        int size_of_matrix = grid.size();
+        int i;
+        int size_of_grid = grid[i].size();
+
+        for(int i=0; i< size_of_matrix ; i++){
+
+             for(int j=0;j<size_of_grid;j++)
+            {
+                if(grid[i][j]<0)
+                {
+                    count++;
+                }
+            }
+        }
+         return count;
+    }
+};
